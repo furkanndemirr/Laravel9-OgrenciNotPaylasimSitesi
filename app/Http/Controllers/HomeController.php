@@ -36,4 +36,14 @@ class HomeController extends Controller
         ]);
 
     }
+    public function test3()
+    {
+        return view('home.test3');
+    }
+    public function save(Request $request)
+    {
+        echo "SAVE FUNCTION <br>";
+        echo "NAME : " , $_REQUEST['fname'];
+        echo "<br>SOYAD : " , $_REQUEST['lname'];
+    }
 }

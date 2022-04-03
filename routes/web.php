@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 | Test Commment
 */
+
 //1- call view in route
 Route::get('/welcome', function () {
     return view('welcome');
@@ -33,4 +34,7 @@ Route::get('/show', [\App\Http\Controllers\HomeController::class, 'show'])->name
 Route::get('/test', [\App\Http\Controllers\HomeController::class, 'test'])->name('test');
 
 //5- Route with parameters
-    Route::get('/param/{id}/{number}', [\App\Http\Controllers\HomeController::class, 'param'])->name('param');
+Route::get('/param/{id}/{number}', [\App\Http\Controllers\HomeController::class, 'param'])->name('param');
+
+Route::get('/test3', [\App\Http\Controllers\HomeController::class, 'test3'])->name('test3');
+Route::post('/save', [\App\Http\Controllers\HomeController::class, 'save'])->name('test3');
