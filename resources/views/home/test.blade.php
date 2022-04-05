@@ -3,7 +3,7 @@
 @section('title', 'TEST LAYOUT PAGE')
 
 @section('header')
-    <p>HEADER.</p>
+    <p>HEADERdas.</p>
 @endsection
 
 @section('sidebar')

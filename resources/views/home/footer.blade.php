@@ -1,228 +1,77 @@
-<!-- Footer ==== -->
-<footer>
-    <div class="footer-top">
-        <div class="pt-exebar">
-            <div class="container">
-                <div class="d-flex align-items-stretch">
-                    <div class="pt-logo mr-auto">
-                        <a href="index.html"><img src="{{asset('assets')}}/images/logo-white.png" alt=""/></a>
-                    </div>
-                    <div class="pt-social-link">
-                        <ul class="list-inline m-a0">
-                            <li><a href="#" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="btn-link"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pt-btn-join">
-                        <a href="#" class="btn ">Join Now</a>
-                    </div>
-                </div>
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-primary mb-4">Get In Touch</h4>
+            <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
+            <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+            <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+            <div class="d-flex justify-content-start mt-4">
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
-                    <div class="widget">
-                        <h5 class="footer-title">Sign Up For A Newsletter</h5>
-                        <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
-                        <div class="subscribe-form m-b20">
-                            <form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-                                <div class="ajax-message"></div>
-                                <div class="input-group">
-                                    <input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
-                                    <span class="input-group-btn">
-											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
-										</span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-5 col-md-7 col-sm-12">
-                    <div class="row">
-                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                            <div class="widget footer_widget">
-                                <h5 class="footer-title">Company</h5>
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about-1.html">About</a></li>
-                                    <li><a href="faq-1.html">FAQs</a></li>
-                                    <li><a href="contact-1.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                            <div class="widget footer_widget">
-                                <h5 class="footer-title">Get In Touch</h5>
-                                <ul>
-                                    <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a></li>
-                                    <li><a href="blog-classic-grid.html">Blog</a></li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                    <li><a href="event.html">Event</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                            <div class="widget footer_widget">
-                                <h5 class="footer-title">Courses</h5>
-                                <ul>
-                                    <li><a href="courses.html">Courses</a></li>
-                                    <li><a href="courses-details.html">Details</a></li>
-                                    <li><a href="membership.html">Membership</a></li>
-                                    <li><a href="profile.html">Profile</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
-                    <div class="widget widget_gallery gallery-grid-4">
-                        <h5 class="footer-title">Our Gallery</h5>
-                        <ul class="magnific-image">
-                            <li><a href="{{asset('assets')}}/images/gallery/pic1.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic1.jpg" alt=""></a></li>
-                            <li><a href="{{asset('assets')}}/images/gallery/pic2.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic2.jpg" alt=""></a></li>
-                            <li><a href="{{asset('assets')}}/images/gallery/pic3.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic3.jpg" alt=""></a></li>
-                            <li><a href="{{asset('assets')}}/images/gallery/pic4.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic4.jpg" alt=""></a></li>
-                            <li><a href="{{asset('assets')}}/images/gallery/pic5.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic5.jpg" alt=""></a></li>
-                            <li><a href="{{asset('assets')}}/images/gallery/pic6.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic6.jpg" alt=""></a></li>
-                            <li><a href="{{asset('assets')}}/images/gallery/pic7.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic7.jpg" alt=""></a></li>
-                            <li><a href="{{asset('assets')}}/images/gallery/pic8.jpg" class="magnific-anchor"><img src="{{asset('assets')}}/images/gallery/pic8.jpg" alt=""></a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-primary mb-4">Quick Links</h4>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Projects</a>
+                <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
             </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-primary mb-4">Popular Links</h4>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Projects</a>
+                <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-primary mb-4">Newsletter</h4>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                </div>
+                <div>
+                    <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
-            </div>
-        </div>
+    <div class="container border-top border-secondary pt-5">
+        <p class="m-0 text-center text-white">
+            &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
+            <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+        </p>
     </div>
-</footer>
-<!-- Footer END ==== -->
+</div>
+<!-- Footer End -->
 
-<button class="back-to-top fa fa-chevron-up" ></button>
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('assets')}}/lib/easing/easing.min.js"></script>
+<script src="{{asset('assets')}}/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="{{asset('assets')}}/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="{{asset('assets')}}/lib/lightbox/js/lightbox.min.js"></script>
 
-<!-- External JavaScripts -->
-<script src="{{asset('assets')}}/js/jquery.min.js"></script>
-<script src="{{asset('assets')}}/vendors/bootstrap/js/popper.min.js"></script>
-<script src="{{asset('assets')}}/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script src="{{asset('Web Template Implementations')}}/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="{{asset('assets')}}/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-<script src="{{asset('assets')}}/vendors/magnific-popup/magnific-popup.js"></script>
-<script src="{{asset('assets')}}/vendors/counter/waypoints-min.js"></script>
-<script src="{{asset('assets')}}/vendors/counter/counterup.min.js"></script>
-<script src="{{asset('assets')}}/vendors/imagesloaded/imagesloaded.js"></script>
-<script src="{{asset('assets')}}/vendors/masonry/masonry.js"></script>
-<script src="{{asset('assets')}}/vendors/masonry/filter.js"></script>
-<script src="{{asset('assets')}}/vendors/owl-carousel/owl.carousel.js"></script>
-<script src="{{asset('assets')}}/js/functions.js"></script>
-<script src="{{asset('assets')}}/js/contact.js"></script>
-<script src='{{asset('assets')}}/vendors/switcher/switcher.js'></script>
-<!-- Revolution JavaScripts Files -->
-<script src="{{asset('assets')}}/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="{{asset('assets')}}/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script>
-    jQuery(document).ready(function() {
-        var ttrevapi;
-        var tpj =jQuery;
-        if(tpj("#rev_slider_486_1").revolution == undefined){
-            revslider_showDoubleJqueryError("#rev_slider_486_1");
-        }else{
-            ttrevapi = tpj("#rev_slider_486_1").show().revolution({
-                sliderType:"standard",
-                jsFileLocation:"{{asset('assets')}}/vendors/revolution/js/",
-                sliderLayout:"fullwidth",
-                dottedOverlay:"none",
-                delay:9000,
-                navigation: {
-                    keyboardNavigation:"on",
-                    keyboard_direction: "horizontal",
-                    mouseScrollNavigation:"off",
-                    mouseScrollReverse:"default",
-                    onHoverStop:"on",
-                    touch:{
-                        touchenabled:"on",
-                        swipe_threshold: 75,
-                        swipe_min_touches: 1,
-                        swipe_direction: "horizontal",
-                        drag_block_vertical: false
-                    }
-                    ,
-                    arrows: {
-                        style: "uranus",
-                        enable: true,
-                        hide_onmobile: false,
-                        hide_onleave: false,
-                        tmp: '',
-                        left: {
-                            h_align: "left",
-                            v_align: "center",
-                            h_offset: 10,
-                            v_offset: 0
-                        },
-                        right: {
-                            h_align: "right",
-                            v_align: "center",
-                            h_offset: 10,
-                            v_offset: 0
-                        }
-                    },
+<!-- Contact Javascript File -->
+<script src="{{asset('assets')}}/mail/jqBootstrapValidation.min.js"></script>
+<script src="{{asset('assets')}}/mail/contact.js"></script>
 
-                },
-                viewPort: {
-                    enable:true,
-                    outof:"pause",
-                    visible_area:"80%",
-                    presize:false
-                },
-                responsiveLevels:[1240,1024,778,480],
-                visibilityLevels:[1240,1024,778,480],
-                gridwidth:[1240,1024,778,480],
-                gridheight:[768,600,600,600],
-                lazyType:"none",
-                parallax: {
-                    type:"scroll",
-                    origo:"enterpoint",
-                    speed:400,
-                    levels:[5,10,15,20,25,30,35,40,45,50,46,47,48,49,50,55],
-                    type:"scroll",
-                },
-                shadow:0,
-                spinner:"off",
-                stopLoop:"off",
-                stopAfterLoops:-1,
-                stopAtSlide:-1,
-                shuffle:"off",
-                autoHeight:"off",
-                hideThumbsOnMobile:"off",
-                hideSliderAtLimit:0,
-                hideCaptionAtLimit:0,
-                hideAllCaptionAtLilmit:0,
-                debugMode:false,
-                fallbacks: {
-                    simplifyAll:"off",
-                    nextSlideOnWindowFocus:"off",
-                    disableFocusListener:false,
-                }
-            });
-        }
-    });
-</script>
-
+<!-- Template Javascript -->
+<script src="{{asset('assets')}}/js/main.js"></script>

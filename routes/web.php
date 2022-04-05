@@ -28,7 +28,7 @@ Route::get('/mesaj', function () {
 });
 
 //3-Call controller function
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 //4- Route-Controller-View
 Route::get('/show', [\App\Http\Controllers\HomeController::class, 'show'])->name('show');
 Route::get('/test', [\App\Http\Controllers\HomeController::class, 'test'])->name('test');

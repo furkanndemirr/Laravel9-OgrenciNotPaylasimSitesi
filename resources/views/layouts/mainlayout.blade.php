@@ -5,7 +5,7 @@
 @yield('head')
 <body>
 @section('header')
-    HEADER.
+    HEADER2.
 @show
 @section('sidebar')
     This is the master sidebar1.
