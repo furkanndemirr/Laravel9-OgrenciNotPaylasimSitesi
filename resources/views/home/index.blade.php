@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title' ,'NOT-PAYLASİM')
+@section('title' ,'NOT PAYLASİM')
 
 @section('slider')
     @include('home.careusel')
