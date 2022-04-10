@@ -56,8 +56,8 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Image</label>
 
-                        <div  class="col-md-3">
-                            <input type="file" name="image">
+                        <div  class="col-md-6">
+                            <input type="file" class="form-control" name="image">
 
                         </div>
                     </div>
@@ -73,11 +73,12 @@
 
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-md-5 control-label" for="inputDefault"></label>
+                    <div class="form-group" >
+                        <label class="col-md-5 control-label" for="inputDefault" ></label>
 
-                        <div class="col-md-6">
-                            <input type="submit"  value="SAVE">
+                        <div class="col-md-3" >
+
+                            <input style="width: 90px" type="submit" class="mb-xs mt-xs mr-xs btn btn-success" value="SAVE">
                         </div>
                     </div>
 
