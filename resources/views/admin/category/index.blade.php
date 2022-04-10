@@ -64,7 +64,7 @@
                                 <td>{{$rs->image}}</td>
                                 <td>{{$rs->status}}</td>
                                 <td><a href="/admin/category/edit/{{$rs->id}}" class="mb-xs mt-xs mr-xs btn btn-info">Edit</a></td>
-                                <td><a href="/admin/category/destroy/{{$rs->id}}" class="mb-xs mt-xs mr-xs btn btn-danger">Delete</a></td>
+                                <td><a href="/admin/category/destroy/{{$rs->id}}" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="return confirm('Deleting !! Are you sure?')">Delete</a></td>
                                 <td><a href="/admin/category/show/{{$rs->id}}" class="mb-xs mt-xs mr-xs btn btn-success">Show</a></td>
 
 
