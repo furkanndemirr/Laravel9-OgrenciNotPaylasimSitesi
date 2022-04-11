@@ -5,13 +5,13 @@
     <section role="main" class="content-body">
         <header class="page-header">
             &nbsp;
-            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" style="width: 200px;"><a href="/admin/category/edit/{{$data->id}}">Edit</a></button>&nbsp;&nbsp;&nbsp;
-            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" onclick="return confirm('Deleting !! Are you sure?')" style="width: 200px;"><a href="/admin/category/destroy/{{$data->id}}">Delete</a></button>
+            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" style="width: 200px;"><a href="{{route('admin.category.edit',['id'=>$data->id])}}">Edit</a></button>&nbsp;&nbsp;&nbsp;
+            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" onclick="return confirm('Deleting !! Are you sure?')" style="width: 200px;"><a href="{{route('admin.category.destroy',['id'=>$data->id])}}">Delete</a></button>
 
             <div class="right-wrapper pull-right">
                 <ol class="breadcrumbs">
                     <li>
-                        <a href="/admin">
+                        <a href="{{route('admin.index')}}">
                             <i class="fa fa-home"></i>
                         </a>
                     </li>

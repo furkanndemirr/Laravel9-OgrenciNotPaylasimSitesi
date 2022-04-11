@@ -8,14 +8,14 @@
         <header class="page-header">
 
             &nbsp&nbsp&nbsp
-            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" style="width: 200px;"><a href="/admin/category/create">Add Category</a></button>
+            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" style="width: 200px;"><a href="{{route('admin.category.create')}}">Add Category</a></button>
             <div class="right-wrapper pull-right">
 
                 <ol class="breadcrumbs">
 
                     <li>
 
-                        <a href="/admin">
+                        <a href="{{route('admin.index')}}">
                             <i class="fa fa-home"></i>
                         </a>
                     </li>
@@ -63,9 +63,9 @@
                                 <td>{{$rs->description}}</td>
                                 <td>{{$rs->image}}</td>
                                 <td>{{$rs->status}}</td>
-                                <td><a href="/admin/category/edit/{{$rs->id}}" class="mb-xs mt-xs mr-xs btn btn-info">Edit</a></td>
-                                <td><a href="/admin/category/destroy/{{$rs->id}}" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="return confirm('Deleting !! Are you sure?')">Delete</a></td>
-                                <td><a href="/admin/category/show/{{$rs->id}}" class="mb-xs mt-xs mr-xs btn btn-success">Show</a></td>
+                                <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-info">Edit</a></td>
+                                <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="return confirm('Deleting !! Are you sure?')">Delete</a></td>
+                                <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-success">Show</a></td>
 
 
                             </tr>

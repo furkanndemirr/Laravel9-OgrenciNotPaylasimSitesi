@@ -9,7 +9,7 @@
             <div class="right-wrapper pull-right">
                 <ol class="breadcrumbs">
                     <li>
-                        <a href="/admin">
+                        <a href="{{route('admin.index')}}">
                             <i class="fa fa-home"></i>
                         </a>
                     </li>
@@ -32,7 +32,7 @@
                 <h2 class="panel-title">Category Elements</h2>
             </header>
             <div class="panel-body">
-                <form class="form-horizontal form-bordered" method="post" action="/admin/category/update/{{$data->id}}">
+                <form class="form-horizontal form-bordered" method="post" action="{{route('admin.category.update',['id'=>$data->id])}}">
                     @csrf
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Title</label>
