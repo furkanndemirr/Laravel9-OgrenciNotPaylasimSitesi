@@ -32,7 +32,7 @@
                 <h2 class="panel-title">Category Elements</h2>
             </header>
             <div class="panel-body">
-                <form class="form-horizontal form-bordered" method="post" action="{{route('admin.category.store')}}">
+                <form class="form-horizontal form-bordered" method="post" action="{{route('admin.category.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Title</label>
