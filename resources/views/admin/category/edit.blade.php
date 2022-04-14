@@ -34,6 +34,22 @@
             <div class="panel-body">
                 <form class="form-horizontal form-bordered" method="post" action="{{route('admin.category.update',['id'=>$data->id])}}" enctype="multipart/form-data">
                     @csrf
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="inputDefault">Parent Category</label>
+                        <div class="col-md-6">
+                            <select  class="form-control" name="parent_id">
+                                <option value="0" selected="selected">Main Category</option>
+                                @foreach($datalist as $rs)
+                                    <option value="{{$rs->id}}" @if($rs->id==$data->parent_id) selected="selected" @endif>
+                                        {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Title</label>
                         <div class="col-md-6">
@@ -56,8 +72,8 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Image</label>
 
-                        <div  class="col-md-3">
-                            <input type="file" name="image" value="{{$data->image}}">
+                        <div  class="col-md-6">
+                            <input class="form-control" type="file" name="image" value="{{$data->image}}">
 
                         </div>
                     </div>
@@ -65,7 +81,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Status</label>
                         <div class="col-md-6">
-                            <select name="status">
+                            <select class="form-control" name="status">
                                 <option selected>{{$data->status}}</option>
                             <option>True</option>
                             <option>False</option>

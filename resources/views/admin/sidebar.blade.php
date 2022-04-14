@@ -17,49 +17,12 @@
                     <li>
                         <a href="/admin"><i class="fa fa-home" aria-hidden="true" style="color: #0e9f6e"></i><span>Dashboard</span></a>
                     </li>
-                    <li class="nav-parent  nav-active">
-                        <a>
-                            <i class="fa fa-gift" style="color: #1DC116" aria-hidden="true"></i>
-                            <span>Order</span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a href="pages-signup.html">
-                                    New Orders
-                                </a>
-                            </li>
 
-                        </ul>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a href="pages-signup.html">
-                                    Accepted Orders
-                                </a>
-                            </li>
-
-                        </ul>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a href="pages-signup.html">
-                                    Shipping Orders
-                                </a>
-                            </li>
-
-                        </ul>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a href="pages-signup.html">
-                                    Completed Orders
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
                     <li>
                         <a href="/admin/category"><i class="fa fa-th" aria-hidden="true" style="color: yellow"></i><span>Categories</span></a>
                     </li>
                     <li>
-                        <a href="/admin/product"><i class="fa fa-th" aria-hidden="true" style="color: #0a6aa1"></i><span>Product</span></a>
+                        <a href="/admin/product"><i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #0a6aa1"></i><span>Content</span></a>
                     </li>
                     <li>
                         <a href="/admin/comments"><i class="fa fa-comments" aria-hidden="true" style="color: black"></i><span>Comments</span></a>
