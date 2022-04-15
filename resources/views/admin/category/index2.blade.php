@@ -1,5 +1,5 @@
 @extends('layouts.adminbase')
-@section('title' ,'Category List')
+@section('title' ,'Content List')
 
 @section('content')
 
@@ -8,7 +8,7 @@
         <header class="page-header">
 
             &nbsp&nbsp&nbsp
-            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" style="width: 200px;"><a href="{{route('admin.category.create')}}">Add Category</a></button>
+            <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" style="width: 200px;"><a href="{{route('admin.content.create')}}">Add Content</a></button>
             <div class="right-wrapper pull-right">
 
                 <ol class="breadcrumbs">
@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li><span>Pages</span></li>
-                    <li><span>Category List</span></li>
+                    <li><span>Content List</span></li>
                 </ol>
 
                 <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -36,7 +36,7 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
-                    <h2 class="panel-title">Category List</h2>
+                    <h2 class="panel-title">Content List</h2>
                 </header>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -44,8 +44,9 @@
                             <thead>
                             <tr>
                                 <th style="width: 10px">Id</th>
-                                <th>Parent</th>
+                                <th>Category</th>
                                 <th>Title</th>
+                                <th>File</th>
                                 <th>Image</th>
                                 <th>Status</th>
                                 <th style="width: 40px">Edit</th>
@@ -55,22 +56,23 @@
                             </thead>
                             <tbody>
                             @foreach($data as $rs)
-                                <tr>
-                                    <td>{{$rs->id}}</td>
-                                    <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
-                                    <td>{{$rs->title}}</td>
-                                    <td>
-                                        @if($rs->image)
-                                            <img src="{{Storage::url($rs->image)}}" style="height: 40px">
-                                        @endif
-                                    </td>
-                                    <td>{{$rs->status}}</td>
-                                    <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-info">Edit</a></td>
-                                    <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="return confirm('Deleting !! Are you sure?')">Delete</a></td>
-                                    <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-success">Show</a></td>
+                            <tr>
+                                <td>{{$rs->id}}</td>
+                                <td>{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+                                <td>{{$rs->title}}</td>
+                                <td>{{$rs->file}}</td>
+                                <td>
+                                    @if($rs->image)
+                                    <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                                    @endif
+                                </td>
+                                <td>{{$rs->status}}</td>
+                                <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-info">Edit</a></td>
+                                <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="return confirm('Deleting !! Are you sure?')">Delete</a></td>
+                                <td><a href="{{route('admin.content.show',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-success">Show</a></td>
 
 
-                                </tr>
+                            </tr>
 
                             @endforeach
                         </table>

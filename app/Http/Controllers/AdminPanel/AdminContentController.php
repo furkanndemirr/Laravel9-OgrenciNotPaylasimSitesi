@@ -4,25 +4,13 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Psy\Util\Str;
 
-class CategoryController extends Controller
+class AdminContentController extends Controller
 {
-    protected $appends = [
-        'getParentsTree'
-    ];
-
-    public static function getParentsTree($category,$title)
-    {
-        if($category->parent_id == 0)
-        {
-            return $title;
-        }
-        $parent = Category::find($category->parent_id);
-        $title = $parent->title . ' > '. $title;
-        return CategoryController::getParentsTree($parent, $title);
-    }
 
     /**
      * Display a listing of the resource.
@@ -32,8 +20,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $data=Category::all();
-        return view('admin.category.index',[
+        $data=Content::all();
+        return view('admin.content.index',[
             'data'=>$data
         ]);
     }
@@ -46,8 +34,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        $data=Category::all();
-        return view('admin.category.create',[
+        $data=  Category::all();
+        return view('admin.content.create',[
             'data'=>$data
         ]);
 
@@ -62,30 +50,37 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $data=new Category();
-        $data->parent_id= $request->parent_id;
+        $data=new Content();
+        $data->category_id= $request->category_id;
+        $data->user_id= 0;//request->category_id;
         $data->title= $request->title;
         $data->keywords= $request->keywords;
+        $data-> course_name = $request->course_name;
         $data->description= $request->description;
+        $data-> school_name = $request->school_name;
+        $data->detail= $request->detail;
+        if($request->file('file')){
+            $data->file=$request->file('file')->store('files');
+        }
         $data->status= $request->status;
         if($request->file('image')){
-            $data->image=$request->file('image')->store('images');
+            $data->image = $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/content');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category,$id)
+    public function show(Content $content,$id)
     {
         //
-        $data=Category::find($id);
-        return view('admin.category.show',[
+        $data=Content::find($id);
+        return view('admin.content.show',[
             'data'=>$data
         ]);
     }
@@ -93,15 +88,15 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category,$id)
+    public function edit(Content $content,$id)
     {
         //
-        $data=Category::find($id);
+        $data=Content::find($id);
         $datalist=Category::all();
-        return view('admin.category.edit',[
+        return view('admin.content.edit',[
             'data'=>$data,
             'datalist'=> $datalist
         ]);
@@ -111,40 +106,49 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category,$id)
+    public function update(Request $request, Content $content,$id)
     {
         //
-        $data=Category::find($id);
-        $data->parent_id= $request->parent_id;
+        $data=Content::find($id);
+        $data->category_id= $request->category_id;
+        $data->user_id= 0;//request->category_id;
         $data->title= $request->title;
         $data->keywords= $request->keywords;
+        $data->course_name = $request->course_name;
         $data->description= $request->description;
+        $data->school_name = $request->school_name;
+        $data->detail= $request->detail;
+        if($request->file('file')){
+            $data->file=$request->file('file')->store('files');
+        }
         $data->status= $request->status;
         if($request->file('image')){
             $data->image=$request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/content');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy(Content $content,$id)
     {
         //
-        $data=Category::find($id);
+        $data=Content::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image))
         {
             Storage::delete($data->image);
         }
+
         $data->delete();
-        return redirect('admin/category');
+        return redirect('admin/content');
     }
 }

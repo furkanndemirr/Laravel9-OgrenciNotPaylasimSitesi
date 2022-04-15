@@ -13,14 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id');
+            $table->foreignId('category_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->string('title');
             $table->string('keywords')->nullable();
+            $table->string('course_name')->nullable();
             $table->string('description')->nullable();
+            $table->string('school_name')->nullable();
             $table->string('image')->nullable();
-            $table->string('status',6);
+            $table->text('detail')->nullable();
+            $table->string('file')->nullable();
+            $table->string('status',6,'True')->default('False');
             $table->timestamps();
         });
     }
@@ -32,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('contents');
     }
 };

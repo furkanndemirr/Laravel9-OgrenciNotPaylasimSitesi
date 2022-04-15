@@ -22,7 +22,7 @@
                         <a href="/admin/category"><i class="fa fa-th" aria-hidden="true" style="color: yellow"></i><span>Categories</span></a>
                     </li>
                     <li>
-                        <a href="/admin/product"><i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #0a6aa1"></i><span>Content</span></a>
+                        <a href="/admin/content"><i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #0a6aa1"></i><span>Content</span></a>
                     </li>
                     <li>
                         <a href="/admin/comments"><i class="fa fa-comments" aria-hidden="true" style="color: black"></i><span>Comments</span></a>
