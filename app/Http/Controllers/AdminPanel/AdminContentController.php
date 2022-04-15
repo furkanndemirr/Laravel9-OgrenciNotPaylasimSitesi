@@ -55,9 +55,9 @@ class AdminContentController extends Controller
         $data->user_id= 0;//request->category_id;
         $data->title= $request->title;
         $data->keywords= $request->keywords;
-        $data-> course_name = $request->course_name;
         $data->description= $request->description;
         $data-> school_name = $request->school_name;
+        $data-> course_name = $request->course_name;
         $data->detail= $request->detail;
         if($request->file('file')){
             $data->file=$request->file('file')->store('files');
@@ -117,9 +117,9 @@ class AdminContentController extends Controller
         $data->user_id= 0;//request->category_id;
         $data->title= $request->title;
         $data->keywords= $request->keywords;
-        $data->course_name = $request->course_name;
         $data->description= $request->description;
         $data->school_name = $request->school_name;
+        $data->course_name = $request->course_name;
         $data->detail= $request->detail;
         if($request->file('file')){
             $data->file=$request->file('file')->store('files');

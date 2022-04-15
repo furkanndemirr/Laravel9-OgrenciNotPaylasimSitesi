@@ -56,18 +56,23 @@
                                     <th>{{$data->keywords}}</th>
                                 </tr>
                                 <tr>
-                                    <th>Course Name</th>
-                                    <th>{{$data->course_name}}</th>
-                                </tr>
-                                <tr>
                                     <th>Description</th>
                                     <th>{{$data->description}}</th>
                                 </tr>
-
                                 <tr>
                                     <th>School Name</th>
                                     <th>{{$data->school_name}}</th>
                                 </tr>
+                                <tr>
+                                    <th>Course Name</th>
+                                    <th>{{$data->course_name}}</th>
+                                </tr>
+                                <tr>
+                                    <th>Detail</th>
+                                    <th>{{$data->detail}}</th>
+                                </tr>
+
+
                                 <tr>
                                     <th>Image</th>
                                     <th>
@@ -84,10 +89,7 @@
                                         @endif
                                     </th>
                                 </tr>
-                                <tr>
-                                    <th>Detail</th>
-                                    <th>{{$data->detail}}</th>
-                                </tr>
+
                                 <tr>
                                     <th>Status</th>
                                     <th>{{$data->status}}</th>

@@ -59,12 +59,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Course Name</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" name="course_name">
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Description</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="description">
@@ -75,6 +69,19 @@
                         <label class="col-md-3 control-label" for="inputDefault">School Name</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="school_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="inputDefault">Course Name</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="course_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="inputDefault">Detail</label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" name="detail">
+                            </textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -93,13 +100,7 @@
 
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Detail</label>
-                        <div class="col-md-6">
-                            <textarea class="form-control" name="detail">
-                            </textarea>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Status</label>
                         <div class="col-md-6">

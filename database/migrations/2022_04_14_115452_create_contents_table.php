@@ -19,11 +19,11 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->string('title');
             $table->string('keywords')->nullable();
-            $table->string('course_name')->nullable();
             $table->string('description')->nullable();
             $table->string('school_name')->nullable();
-            $table->string('image')->nullable();
+            $table->string('course_name')->nullable();
             $table->text('detail')->nullable();
+            $table->string('image')->nullable();
             $table->string('file')->nullable();
             $table->string('status',6,'True')->default('False');
             $table->timestamps();

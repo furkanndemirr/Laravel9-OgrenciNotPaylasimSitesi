@@ -63,12 +63,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Course Name</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" name="course_name" value="{{$data->course_name}}">
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Description</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="description" value="{{$data->description}}">
@@ -80,6 +74,22 @@
                             <input type="text" class="form-control" name="school_name" value="{{$data->school_name}}">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="inputDefault">Course Name</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="course_name" value="{{$data->course_name}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="inputDefault">Detail</label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" name="detail">
+                                {{$data->detail}}
+                            </textarea>
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Image</label>
 
@@ -98,14 +108,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Detail</label>
-                        <div class="col-md-6">
-                            <textarea class="form-control" name="detail">
-                                {{$data->detail}}
-                            </textarea>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Status</label>
                         <div class="col-md-6">

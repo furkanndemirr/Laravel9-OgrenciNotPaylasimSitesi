@@ -46,8 +46,8 @@
                                 <th style="width: 10px">Id</th>
                                 <th>Category</th>
                                 <th>Title</th>
-                                <th>Course Name</th>
                                 <th>School Name</th>
+                                <th>Course Name</th>
                                 <th>Image</th>
                                 <th>File</th>
                                 <th>Status</th>
@@ -62,8 +62,9 @@
                                     <td>{{$rs->id}}</td>
                                     <td>{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                     <td>{{$rs->title}}</td>
-                                    <td>{{$rs->course_name}}</td>
                                     <td>{{$rs->school_name}}</td>
+                                    <td>{{$rs->course_name}}</td>
+
                                     <td>
                                         @if($rs->image)
                                             <img src="{{Storage::url($rs->image)}}" style="height: 40px">
