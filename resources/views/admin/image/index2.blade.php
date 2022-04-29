@@ -46,11 +46,8 @@
                                 <th style="width: 10px">Id</th>
                                 <th>Category</th>
                                 <th>Title</th>
-                                <th>School Name</th>
-                                <th>Course Name</th>
-                                <th>Image</th>
-                                <th>Image Gallery</th>
                                 <th>File</th>
+                                <th>Image</th>
                                 <th>Status</th>
                                 <th style="width: 40px">Edit</th>
                                 <th style="width: 40px">Delete</th>
@@ -59,34 +56,23 @@
                             </thead>
                             <tbody>
                             @foreach($data as $rs)
-                                <tr>
-                                    <td>{{$rs->id}}</td>
-                                    <td>{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
-                                    <td>{{$rs->title}}</td>
-                                    <td>{{$rs->school_name}}</td>
-                                    <td>{{$rs->course_name}}</td>
-
-                                    <td>
-                                        @if($rs->image)
-                                            <img src="{{Storage::url($rs->image)}}" style="height: 40px">
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a href="{{route('admin.image.index',['cid'=>$rs->id])}}"
-                                        onclick="return !window.open(this.href, '','top=50 left=100 width=1100 height=700')">
-                                        <img src="{{asset('assets')}}/images/galleryicon.jpg" style="width: 50px"></a>
-                                    </td>
-                                    <td>@if($rs->file)
-                                            <img src="{{Storage::url('pdf1.png')}}" style="height:50px">
-
-                                        @endif</td>
-                                    <td>{{$rs->status}}</td>
-                                    <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-info">Edit</a></td>
-                                    <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="return confirm('Deleting !! Are you sure?')">Delete</a></td>
-                                    <td><a href="{{route('admin.content.show',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-success">Show</a></td>
+                            <tr>
+                                <td>{{$rs->id}}</td>
+                                <td>{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+                                <td>{{$rs->title}}</td>
+                                <td>{{$rs->file}}</td>
+                                <td>
+                                    @if($rs->image)
+                                    <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                                    @endif
+                                </td>
+                                <td>{{$rs->status}}</td>
+                                <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-info">Edit</a></td>
+                                <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="return confirm('Deleting !! Are you sure?')">Delete</a></td>
+                                <td><a href="{{route('admin.content.show',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-success">Show</a></td>
 
 
-                                </tr>
+                            </tr>
 
                             @endforeach
                         </table>
