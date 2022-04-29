@@ -33,7 +33,7 @@
 
     <!-- Head Libs -->
     <script src="{{asset('assets')}}/vendor/modernizr/modernizr.js"></script>
-    @yield('head')
+    @yield("head")
 </head>
 <body>
 <section class="body">
