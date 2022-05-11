@@ -7,125 +7,29 @@
                 <h1 class="mb-4">Some Of Our Awesome Interior Designing Projects</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center mb-2">
-                <ul class="list-inline mb-4" id="portfolio-flters">
-                    <li class="btn btn-outline-primary m-1 active"  data-filter="*">All</li>
-                    <li class="btn btn-outline-primary m-1" data-filter=".first">Complete</li>
-                    <li class="btn btn-outline-primary m-1" data-filter=".second">Running</li>
-                    <li class="btn btn-outline-primary m-1" data-filter=".third">Upcoming</li>
-                </ul>
-            </div>
-        </div>
+
         <div class="row mx-1 portfolio-container">
+            @foreach($contentlist1 as $rs)
             <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
                 <div class="position-relative overflow-hidden">
                     <div class="portfolio-img d-flex align-items-center justify-content-center">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/portfolio-1.jpg" alt="">
+                        <img class="img-fluid" src="{{Storage::url($rs->image)}}" style="height: 300px; width: 400px">
                     </div>
                     <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white mb-4">Project Name</h4>
+                        <h4 class="text-white mb-4">{{$rs->title}}</h4>
                         <div class="d-flex align-items-center justify-content-center">
                             <a class="btn btn-outline-primary m-1" href="">
                                 <i class="fa fa-link"></i>
                             </a>
-                            <a class="btn btn-outline-primary m-1" href="{{asset('assets')}}/img/portfolio-1.jpg" data-lightbox="portfolio">
+                            <a class="btn btn-outline-primary m-1" href="{{Storage::url($rs->image)}}" data-lightbox="portfolio">
                                 <i class="fa fa-eye"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item second">
-                <div class="position-relative overflow-hidden">
-                    <div class="portfolio-img d-flex align-items-center justify-content-center">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/portfolio-2.jpg" alt="">
-                    </div>
-                    <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white mb-4">Project Name</h4>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-outline-primary m-1" href="">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="btn btn-outline-primary m-1" href="{{asset('assets')}}/img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
-                <div class="position-relative overflow-hidden">
-                    <div class="portfolio-img d-flex align-items-center justify-content-center">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/portfolio-3.jpg" alt="">
-                    </div>
-                    <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white mb-4">Project Name</h4>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-outline-primary m-1" href="">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="btn btn-outline-primary m-1" href="{{asset('assets')}}/img/portfolio-3.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
-                <div class="position-relative overflow-hidden">
-                    <div class="portfolio-img d-flex align-items-center justify-content-center">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/portfolio-4.jpg" alt="">
-                    </div>
-                    <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white mb-4">Project Name</h4>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-outline-primary m-1" href="">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="btn btn-outline-primary m-1" href="{{asset('assets')}}/img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item second">
-                <div class="position-relative overflow-hidden">
-                    <div class="portfolio-img d-flex align-items-center justify-content-center">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/portfolio-5.jpg" alt="">
-                    </div>
-                    <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white mb-4">Project Name</h4>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-outline-primary m-1" href="">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="btn btn-outline-primary m-1" href="{{asset('assets')}}/img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
-                <div class="position-relative overflow-hidden">
-                    <div class="portfolio-img d-flex align-items-center justify-content-center">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/portfolio-6.jpg" alt="">
-                    </div>
-                    <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white mb-4">Project Name</h4>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-outline-primary m-1" href="">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="btn btn-outline-primary m-1" href="{{asset('assets')}}/img/portfolio-6.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
 </div>
