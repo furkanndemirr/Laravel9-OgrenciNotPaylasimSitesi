@@ -40,6 +40,8 @@ Route::get('/test', [\App\Http\Controllers\HomeController::class, 'test'])->name
 //5- Route with parameters
 Route::get('/param/{id}/{number}', [\App\Http\Controllers\HomeController::class, 'param'])->name('param');
 
+Route::get('/content/{id}', [\App\Http\Controllers\HomeController::class, 'content'])->name('content');
+
 Route::get('/test3', [\App\Http\Controllers\HomeController::class, 'test3'])->name('test3');
 Route::post('/save', [\App\Http\Controllers\HomeController::class, 'save'])->name('test3');
 

@@ -18,7 +18,7 @@
                     <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
                         <h4 class="text-white mb-4">{{$rs->title}}</h4>
                         <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-outline-primary m-1" href="">
+                            <a class="btn btn-outline-primary m-1" href="{{route('content',['id'=>$rs->id])}}">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a class="btn btn-outline-primary m-1" href="{{Storage::url($rs->image)}}" data-lightbox="portfolio">

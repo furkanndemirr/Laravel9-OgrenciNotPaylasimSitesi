@@ -20,7 +20,7 @@
                     <div class="p-3" style="max-width: 800px;">
                         <h4 class="text-primary text-uppercase font-weight-normal mb-md-3">Creative Interior Design</h4>
                         <h3 class="display-3 text-white mb-md-4">{{$rs->title}}</h3>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2 mt-md-4">Learn More</a>
+                        <a href="{{route('content',['id'=>$rs->id])}}" class="btn btn-primary py-md-3 px-md-5 mt-2 mt-md-4">Learn More</a>
                     </div>
                 </div>
             </div>
