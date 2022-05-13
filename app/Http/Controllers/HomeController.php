@@ -15,11 +15,11 @@ class HomeController extends Controller
     //
     public function index()
     {
-
+        $page='home';
         $sliderdata=Content::limit(4)->get();
         $contentlist1=Content::limit(6)->get();
         return view('home.index',[
-
+            'page'=>$page,
             'sliderdata'=>$sliderdata,
                 'contentlist1'=>$contentlist1
             ]
@@ -39,14 +39,11 @@ class HomeController extends Controller
     }
     public function categorycontents($id)
     {
-        echo "Category Contents";
-        exit();
-        $data=Content::find($id);
-        $images = DB::table('images')->where('content_id',$id)->get();
-
-        return view('home.content',[
-                'data'=>$data,
-                'images'=>$images
+        $category=Category::find($id);
+        $contents = DB::table('contents')->where('category_id',$id)->get();
+        return view('home.categorycontents',[
+                'category'=>$category,
+                'contents'=>$contents
             ]
         );
     }
