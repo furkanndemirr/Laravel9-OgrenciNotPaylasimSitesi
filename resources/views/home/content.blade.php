@@ -15,23 +15,23 @@
                 </div>
 
                 <div class="mb-5">
-                    <img class="img-fluid mb-4" src="{{Storage::url($data->image)}}" alt="Image" style="height: 500px;width: 500px">
-                    <p><b><u>Description</u></b></p>
+                    <img class="img-fluid mb-4"  src="{{Storage::url($data->image)}}" alt="Image" style="height: 500px;width: 500px;margin-left: 300px ">
+                    <p><b><u>Açıklama :</u></b></p>
                     {{$data->description}}<br><br><br>
                     <div class="mb-5 mx-n3">
-                        <h3 class="mb-4 ml-3 section-title">Image Gallery</h3>
-                        <div class="owl-carousel service-carousel position-relative">
+                        <h3 class="mb-4 ml-3 section-title">Image Gallery</h3><br>
+                        <div class="owl-carousel service-carousel position-relative"  style="margin-left: 190px ">
                             @foreach($images as $rs)
                     <div class="card border-0 mx-3">
 
-                        <img class="card-img-top" src="{{Storage::url($rs->image)}}" alt="" style="height: 300px;width: 349px">
+                        <img class="card-img-top" src="{{Storage::url($rs->image)}}" alt="" style="height: 300px;width: 349px; " >
                         <div class="card-body bg-light p-4" style="text-align: center">
                             <p><b>{{$rs->title}}</b></p>
                         </div>
 
                     </div>@endforeach
                         </div></div>
-                    <b><u>Detail :</u></b><br><br>
+                    <b><u>Detay :</u></b><br><br>
                     <p>{!!$data->detail!!}</p>
                     <p></p>
 

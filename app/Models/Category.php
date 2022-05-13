@@ -12,4 +12,15 @@ class Category extends Model
     public function contents(){
         return $this->hasMany(Content::class);
     }
+    # One to Many Inverse
+    public function parent()
+    {
+        return $this->belongsTo(Category::class,'parent_id');
+    }
+    # One to Many
+    public function children()
+    {
+        return $this->hasMany(Category::class,'parent_id');
+    }
+
 }

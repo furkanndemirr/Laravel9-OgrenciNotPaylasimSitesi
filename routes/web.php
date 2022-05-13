@@ -41,6 +41,8 @@ Route::get('/test', [\App\Http\Controllers\HomeController::class, 'test'])->name
 Route::get('/param/{id}/{number}', [\App\Http\Controllers\HomeController::class, 'param'])->name('param');
 
 Route::get('/content/{id}', [\App\Http\Controllers\HomeController::class, 'content'])->name('content');
+Route::get('/categorycontents/{id}/{slug}', [\App\Http\Controllers\HomeController::class, 'categorycontents'])->name('categorycontents');
+
 
 Route::get('/test3', [\App\Http\Controllers\HomeController::class, 'test3'])->name('test3');
 Route::post('/save', [\App\Http\Controllers\HomeController::class, 'save'])->name('test3');
