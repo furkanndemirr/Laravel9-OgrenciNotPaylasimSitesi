@@ -32,7 +32,14 @@ Route::get('/mesaj', function () {
 });
 
 //3-Call controller function
+//************************HOME PAGE ROUTES**********************
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
+
+
 //4- Route-Controller-View
 Route::get('/show', [\App\Http\Controllers\HomeController::class, 'show'])->name('show');
 Route::get('/test', [\App\Http\Controllers\HomeController::class, 'test'])->name('test');
