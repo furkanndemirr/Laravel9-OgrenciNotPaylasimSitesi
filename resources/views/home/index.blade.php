@@ -10,7 +10,6 @@
 @endsection
 
 @section('content')
-    @include('home.about')
     @include('home.service')
     @include('home.features')
     @include('home.projects')

@@ -15,25 +15,48 @@
                 </div>
 
                 <div class="mb-5">
-                    <img class="img-fluid mb-4"  src="{{Storage::url($data->image)}}" alt="Image" style="height: 500px;width: 500px;margin-left: 300px ">
+                    <img class="img-fluid mb-4"  src="{{Storage::url($data->image)}}" alt="Image" style="height: 300px;width: 500px;margin-left: 300px ">
                     <p><b><u>Açıklama :</u></b></p>
                     {{$data->description}}<br><br><br>
                     <div class="mb-5 mx-n3">
-                        <h3 class="mb-4 ml-3 section-title">Image Gallery</h3><br>
-                        <div class="owl-carousel service-carousel position-relative"  style="margin-left: 190px ">
+                        <h3 class="mb-4 ml-3 section-title">Notes</h3>
+                        <div class="row mx-1 portfolio-container">
                             @foreach($images as $rs)
-                    <div class="card border-0 mx-3">
+                                <div class="col-lg-4 col-md-6 col-sm-12 p-2 portfolio-item first">
+                                    <div class="position-relative overflow-hidden">
+                                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                                            <img class="img-fluid" src="{{Storage::url($rs->image)}}" style="height: 300px; width: 400px">
+                                        </div>
+                                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                                            <h4 class="text-white mb-4">{{$rs->title}}</h4>
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <a class="btn btn-outline-primary m-1"  href="{{route('content',['id'=>$rs->id])}}">
+                                                    <i class="fa fa-link"></i>
+                                                </a>
+                                                <a class="btn btn-outline-primary m-1" href="{{Storage::url($rs->image)}}  " data-lightbox="portfolio">
+                                                    <i class="fa fa-eye" ></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
 
-                        <img class="card-img-top" src="{{Storage::url($rs->image)}}" alt="" style="height: 300px;width: 349px; " >
-                        <div class="card-body bg-light p-4" style="text-align: center">
-                            <p><b>{{$rs->title}}</b></p>
                         </div>
 
-                    </div>@endforeach
-                        </div></div>
+                    </div>
+                    @if($data->file!=null)
+                        <img src="{{Storage::url('pdf1.png')}}" style="height:50px">
+                        <a class="btn btn-action" href="{{Storage::url($data->file)}} " onclick="return !window.open(this.href, '','top=50 left=100 width=1100 height=700')">
+                            <i class="fa fa-download"></i>
+                            İndirme işlemini başlat
+                        </a>
+                    @endif
+
+                    @if($data->detail!=null)
                     <b><u>Detay :</u></b><br><br>
                     <p>{!!$data->detail!!}</p>
-                    <p></p>
+                    @endif
 
                 </div>
 

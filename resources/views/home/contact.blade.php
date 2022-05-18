@@ -37,29 +37,46 @@
 
 
                     </div>
+
                 </div>
-                <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
+                <div class="col-lg-7 mb-5 my-lg-5 py-0 pl-lg-5">
+
                     <div class="contact-form">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                <p class="help-block text-danger"></p>
+                        <div class="col-lg-5">
+                            <div class="d-flex flex-column">
+                                <h4 style="text-align: center">Contact Form</h4>
+
                             </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                <p class="help-block text-danger"></p>
+
+                        </div>
+                        <br>
+                        @include('home.messages')
+                        <br>
+
+                        <form action="{{route("storemessage")}}" method="post">
+                           @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control p-4" placeholder="Name & Surname" name="name" required="required" data-validation-required-message="Please enter your name">
+
                             </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
+                            <div class="form-group">
+                                <input type="tel" class="form-control p-4" placeholder="Phone Number" name="phone" required="required" data-validation-required-message="Please enter your phone">
+
                             </div>
-                            <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
+                            <div class="form-group">
+                                <input type="text" class="form-control p-4" placeholder="Email" name="email" required="required" data-validation-required-message="Please enter a email">
+
                             </div>
-                            <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                            <div class="form-group">
+                                <input class="form-control p-4" rows="6" placeholder="Subject" name="subject" required="required" data-validation-required-message="Please enter your subject">
+
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control p-4" rows="6"  name="message" placeholder="Your Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+
+                            </div>
+                            <div style="margin-left:200px">
+                                <button class="btn btn-primary py-3 px-5" type="submit" >Send Message</button>
                             </div>
                         </form>
                     </div>

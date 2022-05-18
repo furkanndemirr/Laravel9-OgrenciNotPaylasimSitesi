@@ -17,9 +17,13 @@
 
                     <div class="card border-0 mb-2">
                         <img class="card-img-top" src="{{Storage::url($rs->image)}}" alt="" style="width: 350px;height: 275px">
+
                         <div class="card-body bg-white p-4">
                             <div class="d-flex align-items-center mb-3">
                                 <a class="btn btn-primary" href="{{route('content',['id'=>$rs->id])}}"><i class="fa fa-link"></i></a>
+                                <a class="btn  m-1 btn-primary" href="{{Storage::url($rs->image)}} " data-lightbox="portfolio">
+                                    <i class="fa fa-eye" ></i>
+                                </a>
                                 <h5 class="m-0 ml-3 text-truncate">{{$rs->course_name}}</h5>
                             </div>
                             <p>{{$rs->description}}</p>

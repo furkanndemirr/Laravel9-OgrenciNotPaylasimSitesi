@@ -166,7 +166,7 @@
 
                             <label class="col-md-1 control-label" for="inputDefault">About_Us</label>
                             <div  class="col-md-12">
-                                <textarea class="form-control" id="aboutus" name="aboutus" value="{{$data->aboutus}}"></textarea>
+                                <textarea class="form-control" id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
 
                             <label class="col-md-1 control-label" for="inputDefault">Contact</label>
                             <div  class="col-md-12">
-                                <textarea class="form-control" id="contact" name="contact" value="{{$data->contact}}"></textarea>
+                                <textarea class="form-control" id="contact" name="contact">{{$data->contact}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
 
                             <label class="col-md-1 control-label" for="inputDefault">References</label>
                             <div  class="col-md-12">
-                                <textarea class="form-control" id="references" name="references" value="{{$data->references}}"></textarea>
+                                <textarea class="form-control" id="references" name="references">{{$data->references}}</textarea>
                             </div>
                             <br>
                             <script>

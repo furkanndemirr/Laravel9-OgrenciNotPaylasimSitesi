@@ -31,7 +31,7 @@
                         <a href="/admin/faq"><i class="fa fa-warning" aria-hidden="true" style="color: red"></i><span>FAQ</span></a>
                     </li>
                     <li>
-                        <a href="/admin/messages"><i class="fa fa-envelope" aria-hidden="true" style="color: #6f42c1"></i><span>Messages</span></a>
+                        <a href="{{route('admin.message.index')}}"><i class="fa fa-envelope" aria-hidden="true" style="color: #6f42c1"></i><span>Messages</span></a>
                     </li>
                     <li>
                         <a href="/admin/users"><i class="fa fa-users" aria-hidden="true" style="color: #888a85"></i><span>Users</span></a>
