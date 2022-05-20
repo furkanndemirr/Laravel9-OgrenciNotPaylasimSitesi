@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
@@ -39,6 +40,8 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+
 
 
 
@@ -103,5 +106,16 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
 
+    });
+    //************************ Admin FAQ  ROUTES**********************
+    Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group (function()
+    {
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}','show')->name('show');
     });
 });

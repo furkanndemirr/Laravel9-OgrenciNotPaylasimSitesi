@@ -28,7 +28,7 @@
                         <a href="/admin/comments"><i class="fa fa-comments" aria-hidden="true" style="color: black"></i><span>Comments</span></a>
                     </li>
                     <li>
-                        <a href="/admin/faq"><i class="fa fa-warning" aria-hidden="true" style="color: red"></i><span>FAQ</span></a>
+                        <a href="{{route('admin.faq.index')}}"><i class="fa fa-warning" aria-hidden="true" style="color: red"></i><span>FAQ</span></a>
                     </li>
                     <li>
                         <a href="{{route('admin.message.index')}}"><i class="fa fa-envelope" aria-hidden="true" style="color: #6f42c1"></i><span>Messages</span></a>

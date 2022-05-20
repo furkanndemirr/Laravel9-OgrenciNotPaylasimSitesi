@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-white pr-3" href="">FAQs</a>
+                    <a class="text-white pr-3" href="{{route('faq')}}">FAQs</a>
                     <span class="text-white">|</span>
                     <a class="text-white px-3" href="">Help</a>
                     <span class="text-white">|</span>
