@@ -25,7 +25,7 @@
                         <a href="/admin/content"><i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #0a6aa1"></i><span>Content</span></a>
                     </li>
                     <li>
-                        <a href="/admin/comments"><i class="fa fa-comments" aria-hidden="true" style="color: black"></i><span>Comments</span></a>
+                        <a href="{{route('admin.comment.index')}}"><i class="fa fa-comments" aria-hidden="true" style="color: black"></i><span>Comments</span></a>
                     </li>
                     <li>
                         <a href="{{route('admin.faq.index')}}"><i class="fa fa-warning" aria-hidden="true" style="color: red"></i><span>FAQ</span></a>

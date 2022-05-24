@@ -9,6 +9,7 @@
     <div class="container py-5">
         <div class="row pt-5">
             <div class="col-lg-8">
+                @include('home.messages')
                 <div class="d-flex flex-column text-left mb-4">
 
                     <h1 class="mb-4 section-title">{{$data->title}}</h1>
@@ -63,55 +64,58 @@
 
 
                 <div class="mb-5">
-                    <h3 class="mb-4 section-title">3 Comments</h3>
-                    <div class="media mb-4">
-                        <img src="{{asset('assets')}}/img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                        <div class="media-body">
-                            <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum. Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor consetetur at sit.</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
-                        </div>
-                    </div>
-                    <div class="media mb-4">
-                        <img src="{{asset('assets')}}/img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                        <div class="media-body">
-                            <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum. Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor consetetur at sit.</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
-                            <div class="media mt-4">
-                                <img src="{{asset('assets')}}/img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                                <div class="media-body">
-                                    <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
-                                    <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum. Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor consetetur at sit.</p>
-                                    <button class="btn btn-sm btn-light">Reply</button>
+                    <h3 class="mb-4 section-title">Comments</h3>
+                    @foreach($reviews as $rs)
+                        <div class="media mb-4">
+                            <div class="media-body">
+                                <div>
+                                    <h5><i class="fa fa-user-md"></i> {{$rs->user->name}} <small>{{$rs->created_at}}</small></h5>
                                 </div>
+                            @for($i=1;$i<=$rs->rate ;$i++)
+                                <i class="fa fa-star"></i>
+                                @endfor
+
+                                <h5>{{$rs->subject}}</h5>
+                                <p>{{$rs->review}}</p>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
 
                 <div class="bg-light p-5">
+
                     <h3 class="mb-4 section-title">Leave a comment</h3>
-                    <form>
+                    <form action="{{route('storecomment')}}" method="post">
+                        @csrf
+                        <input type="hidden" class="input" name="content_id" value="{{$data->id}}">
                         <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" class="form-control" id="name">
+                            <label>Subject *</label>
+                            <input type="text" class="form-control" id="name" name="subject" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" class="form-control" id="email">
+                            <label>Review *</label>
+                            <textarea type="text" class="form-control" id="email" name="review" placeholder="Your review"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="website">Website</label>
-                            <input type="url" class="form-control" id="website">
+                            <label>Rate *</label>
+
+                                <select class="form-control" name="rate">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+
+
                         </div>
 
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                        </div>
                         <div class="form-group mb-0">
+                            @auth
                             <input type="submit" value="Leave Comment" class="btn btn-primary px-3">
+                            @else
+                            <a href="/login" class="btn btn-primary px-3">For Submit Your Review, Please Login</a>
+                            @endauth
                         </div>
                     </form>
                 </div>
