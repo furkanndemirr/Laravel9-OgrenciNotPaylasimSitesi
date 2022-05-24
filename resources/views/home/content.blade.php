@@ -13,8 +13,22 @@
                 <div class="d-flex flex-column text-left mb-4">
 
                     <h1 class="mb-4 section-title">{{$data->title}}</h1>
-                </div>
+                    <div>
+                        @php
+                        $average=$data->comment->average('rate');
+                        @endphp
 
+                        <div>
+                            @for($i=1;$i<=$average ;$i++)
+                                <i style='font-size:17px' class='fas'>&#xf005;</i>
+                            @endfor
+                            @for($i=$average;$i<5;$i++)
+                                    <i style='font-size:17px' class='far'>&#xf005;</i>
+                            @endfor
+                            <a href="#"> {{number_format($average,1)}} / {{$data->comment->count('id')}} Comments / Add Comment</a>
+                        </div>
+                    </div>
+<br><br>
                 <div class="mb-5">
                     <img class="img-fluid mb-4"  src="{{Storage::url($data->image)}}" alt="Image" style="height: 300px;width: 500px;margin-left: 300px ">
                     <p><b><u>Açıklama :</u></b></p>

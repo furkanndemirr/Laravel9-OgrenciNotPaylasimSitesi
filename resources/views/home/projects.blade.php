@@ -17,6 +17,19 @@
                     </div>
                     <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
                         <h4 class="text-white mb-4">{{$rs->title}}</h4>
+                        @php
+                            $average=$rs->comment->average('rate');
+                        @endphp
+
+                        <div>
+                            @for($i=1;$i<=$average ;$i++)
+                                <i style='font-size:17px' class='fas'>&#xf005;</i>
+                            @endfor
+                            @for($i=$average;$i<5;$i++)
+                                <i style='font-size:17px' class='far'>&#xf005;</i>
+                            @endfor
+                                {{$rs->comment->count('id')}}
+                        </div>
                         <div class="d-flex align-items-center justify-content-center">
                             <a class="btn btn-outline-primary m-1"  href="{{route('content',['id'=>$rs->id])}}">
                                 <i class="fa fa-link"></i>
@@ -24,6 +37,7 @@
                             <a class="btn btn-outline-primary m-1" href="{{Storage::url($rs->image)}} " data-lightbox="portfolio">
                                 <i class="fa fa-eye" ></i>
                             </a>
+
                         </div>
                     </div>
                 </div>
