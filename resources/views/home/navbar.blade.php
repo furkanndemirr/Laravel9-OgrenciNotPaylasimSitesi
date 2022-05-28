@@ -16,8 +16,6 @@
                     <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
                     <a href="{{route('about')}}" class="nav-item nav-link">About</a>
                     <a href="{{route('references')}}" class="nav-item nav-link">References</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="project.html" class="nav-item nav-link">Project</a>
                     <div class="nav-item dropdown">
 
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
@@ -38,6 +36,28 @@
 
                     </div>
                     <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+
+                    @auth
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}}</a>
+
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/logoutuser" class="dropdown-item">Logout</a>
+                            </div>
+
+                        </div>@endauth
+                        @guest
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hesabım</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/loginuser" class="dropdown-item">Giriş Yap</a>
+                            <a href="/registeruser" class="dropdown-item">Üye Ol</a>
+                            </div>
+                        </div>
+                        @endguest
+
+
+
                 </div>
             </div>
         </nav>
