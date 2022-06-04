@@ -1,7 +1,7 @@
 <!-- start: header -->
 <header class="header">
     <div class="logo-container">
-        <a href="../" class="logo">
+        <a href="{{route('admin.index')}}" class="logo">
             <img src="{{asset('assets')}}/images/logo.png" height="35" alt="Porto Admin" />
         </a>
         <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -192,7 +192,7 @@
                     <img src="{{asset('assets')}}/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="{{asset('assets')}}/images/!logged-user.jpg" />
                 </figure>
                 <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-                    <span class="name">John Doe Junior</span>
+                    <span class="name">{{Auth::user()->name}}</span>
                     <span class="role">administrator</span>
                 </div>
 
@@ -202,14 +202,10 @@
             <div class="dropdown-menu">
                 <ul class="list-unstyled">
                     <li class="divider"></li>
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
-                    </li>
-                    <li>
                         <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
                     </li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+                        <a role="menuitem" tabindex="-1" href="/logoutuser"><i class="fa fa-power-off"></i> Logout</a>
                     </li>
                 </ul>
             </div>

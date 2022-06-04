@@ -2,9 +2,7 @@
 <aside id="sidebar-left" class="sidebar-left">
 
     <div class="sidebar-header">
-        <div class="sidebar-title" style="color: black">
-            <b>Furkan DEMİR</b>
-        </div>
+
         <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
             <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
         </div>
