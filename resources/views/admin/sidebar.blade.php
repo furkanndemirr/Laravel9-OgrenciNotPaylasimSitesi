@@ -32,7 +32,7 @@
                         <a href="{{route('admin.message.index')}}"><i class="fa fa-envelope" aria-hidden="true" style="color: #6f42c1"></i><span>Messages</span></a>
                     </li>
                     <li>
-                        <a href="/admin/users"><i class="fa fa-users" aria-hidden="true" style="color: #888a85"></i><span>Users</span></a>
+                        <a href="/admin/user"><i class="fa fa-users" aria-hidden="true" style="color: #888a85"></i><span>Users</span></a>
                     </li>
                     <li>
                         <a href="/admin/social"><i class="fa fa-flickr" aria-hidden="true" style="color: #e96ba8"></i><span>Social</span></a>
