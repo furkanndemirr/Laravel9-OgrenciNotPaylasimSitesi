@@ -3,8 +3,8 @@
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 col text-center mb-4">
-                <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Projects</h6>
-                <h1 class="mb-4">Some Of Our Awesome Interior Designing Projects</h1>
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Contents</h6>
+                <h1 class="mb-4">Some Of Our Awesome Contents</h1>
             </div>
         </div>
 

@@ -7,7 +7,7 @@
                     <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                     <div class="d-flex flex-column">
                         <h5>Our Office</h5>
-                        <p class="m-0">123 Street, New York, USA</p>
+                        <p class="m-0">1005 Street, Karabuk, TURKEY</p>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                     <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
                     <div class="d-flex flex-column">
                         <h5>Email Us</h5>
-                        <p class="m-0">info@example.com</p>
+                        <p class="m-0">notsharing@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
                     <div class="d-flex flex-column">
                         <h5>Call Us</h5>
-                        <p class="m-0">+012 345 6789</p>
+                        <p class="m-0">+90 531 387 18 53</p>
                     </div>
                 </div>
             </div>

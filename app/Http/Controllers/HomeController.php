@@ -21,8 +21,8 @@ class HomeController extends Controller
     public function index()
     {
         $page='home';
-        $sliderdata=Content::limit(4)->get();
-        $contentlist1=Content::limit(6)->get();
+        $sliderdata=Content::limit(6)->get();
+        $contentlist1=Content::limit(10)->get();
         $setting=Setting::first();
         return view('home.index',[
             'page'=>$page,

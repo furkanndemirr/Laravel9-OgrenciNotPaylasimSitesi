@@ -58,8 +58,7 @@
                                 @foreach($comments as $rs)
                                     <tr>
                                         <td>{{$rs->id}}</td>
-                                        <td><a href="{{route('content',['id'=>$rs->content_id])}}">{{$rs->content->title}}</td>
-
+                                        <td><a href="{{route('content',['id'=>$rs->content_id])}}">{{$rs->content->title}}</a></td>
                                         <td>{{$rs->subject}}</td>
                                         <td>{{$rs->review}}</td>
 

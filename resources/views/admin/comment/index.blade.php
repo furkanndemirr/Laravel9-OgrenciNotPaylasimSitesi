@@ -43,7 +43,6 @@
                             <thead>
                             <tr>
                                 <th style="width: 10px">Id</th>
-                                <th>Name</th>
                                 <th>Content</th>
                                 <th>Subject</th>
                                 <th>Reviews</th>
@@ -57,12 +56,9 @@
                             @foreach($data as $rs)
                                 <tr>
                                     <td>{{$rs->id}}</td>
-                                    <td><a href="{{route('admin.content.show',['id'=>$rs->content_id])}}">{{$rs->content->title}}</td>
-                                    <td>{{$rs->user->name}}</td>
+                                    <td><a href="{{route('admin.content.show',['id'=>$rs->content_id])}}">{{$rs->content->title}}</a></td>
                                     <td>{{$rs->subject}}</td>
                                     <td>{{$rs->review}}</td>
-
-
                                     <td>{{$rs->rate}}</td>
                                     <td>{{$rs->status}}</td>
                                     <td><a href="{{route('admin.comment.show',['id'=>$rs->id])}}" class="mb-xs mt-xs mr-xs btn btn-success" onclick="return !window.open(this.href, '','top=50 left=100 width=1100 height=700')">Show</a></td>

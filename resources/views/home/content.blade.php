@@ -5,10 +5,11 @@
 
 @section('content')
     <!-- Detail Start -->
-
-    <div class="container py-5">
-        <div class="row pt-5">
-            <div class="col-lg-8">
+    <div>
+    <div class="container-fluid bg-light pt-5">
+    <div class="container py-2">
+        <div class="row pt-0">
+            <div class="col-lg-10">
                 @include('home.messages')
                 <div class="d-flex flex-column text-left mb-4">
 
@@ -30,8 +31,8 @@
                     </div>
 <br><br>
                 <div class="mb-5">
-                    <img class="img-fluid mb-4"  src="{{Storage::url($data->image)}}" alt="Image" style="height: 300px;width: 500px;margin-left: 300px ">
-                    <p><b><u>Açıklama :</u></b></p>
+                    <img class="img-fluid mb-4"  src="{{Storage::url($data->image)}}" alt="Image" style="height: 400px;width: 300px;margin-left: 400px ">
+                    <p><b><u>Description :</u></b></p>
                     {{$data->description}}<br><br><br>
                     <div class="mb-5 mx-n3">
                         <h3 class="mb-4 ml-3 section-title">Notes</h3>
@@ -40,14 +41,12 @@
                                 <div class="col-lg-4 col-md-6 col-sm-12 p-2 portfolio-item first">
                                     <div class="position-relative overflow-hidden">
                                         <div class="portfolio-img d-flex align-items-center justify-content-center">
-                                            <img class="img-fluid" src="{{Storage::url($rs->image)}}" style="height: 300px; width: 400px">
+                                            <img class="img-fluid" src="{{Storage::url($rs->image)}}" style="height: 300px; width: 350px">
                                         </div>
                                         <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
                                             <h4 class="text-white mb-4">{{$rs->title}}</h4>
                                             <div class="d-flex align-items-center justify-content-center">
-                                                <a class="btn btn-outline-primary m-1"  href="{{route('content',['id'=>$rs->id])}}">
-                                                    <i class="fa fa-link"></i>
-                                                </a>
+
                                                 <a class="btn btn-outline-primary m-1" href="{{Storage::url($rs->image)}}  " data-lightbox="portfolio">
                                                     <i class="fa fa-eye" ></i>
                                                 </a>
@@ -64,18 +63,17 @@
                         <img src="{{Storage::url('pdf1.png')}}" style="height:50px">
                         <a class="btn btn-action" href="{{Storage::url($data->file)}} " onclick="return !window.open(this.href, '','top=50 left=100 width=1100 height=700')">
                             <i class="fa fa-download"></i>
-                            İndirme işlemini başlat
+
+                            Start Download
                         </a>
                     @endif
 
                     @if($data->detail!=null)
-                    <b><u>Detay :</u></b><br><br>
+                    <br><br><b><u>Detay :</u></b>
                     <p>{!!$data->detail!!}</p>
                     @endif
 
                 </div>
-
-
 
                 <div class="mb-5">
                     <h3 class="mb-4 section-title">Comments</h3>
@@ -96,8 +94,7 @@
                     @endforeach
                 </div>
 
-                <div class="bg-light p-5">
-
+                <div class="bg-light p-0">
                     <h3 class="mb-4 section-title">Leave a comment</h3>
                     <form action="{{route('storecomment')}}" method="post">
                         @csrf
@@ -123,7 +120,7 @@
 
 
                         </div>
-
+                        <br>
                         <div class="form-group mb-0">
                             @auth
                             <input type="submit" value="Leave Comment" class="btn btn-primary px-3">
@@ -131,6 +128,7 @@
                             <a href="/login" class="btn btn-primary px-3">For Submit Your Review, Please Login</a>
                             @endauth
                         </div>
+                        <br>
                     </form>
                 </div>
             </div>
@@ -138,8 +136,10 @@
 
         </div>
     </div>
-
+    </div>
+    </div>
     <!-- Detail End -->
+
 @endsection
 
 
