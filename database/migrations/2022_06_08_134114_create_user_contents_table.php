@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contents', function (Blueprint $table) {
+        Schema::create('user_contents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->nullable();
-            $table->integer('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->string('title');
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
@@ -25,7 +25,6 @@ return new class extends Migration
             $table->text('detail')->nullable();
             $table->string('image')->nullable();
             $table->string('file')->nullable();
-            $table->string('status',6,'True')->default('False');
             $table->timestamps();
         });
     }
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contents');
+        Schema::dropIfExists('user_contents');
     }
 };

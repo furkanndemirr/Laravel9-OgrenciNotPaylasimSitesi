@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         $page='home';
         $sliderdata=Content::limit(6)->get();
-        $contentlist1=Content::limit(10)->get();
+        $contentlist1=Content::where('status','true')->limit(15)->get();
         $setting=Setting::first();
         return view('home.index',[
             'page'=>$page,
@@ -32,6 +32,7 @@ class HomeController extends Controller
             ]
         );
     }
+
     public function about()
     {
 
@@ -81,7 +82,20 @@ class HomeController extends Controller
         $data->save();
         return redirect()->route('content',['id'=>$request->input('content_id')])->with('success','Your comment has been sent, Thank You.');
     }
+    public function storemessage(Request $request)
+    {
+        //dd($request);
+        $data = new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->ip=request()->ip();
+        $data->save();
 
+        return redirect()->route('contact')->with('info','Your message has been sent, Thank You.');
+    }
     public function content($id)
     {
         $data=Content::find($id);

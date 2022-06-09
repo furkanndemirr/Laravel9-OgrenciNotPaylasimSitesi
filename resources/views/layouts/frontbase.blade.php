@@ -30,6 +30,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('assets')}}/css/style.css" rel="stylesheet">
+    @yield("head1")
 </head>
 
 <body>

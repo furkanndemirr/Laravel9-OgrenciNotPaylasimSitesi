@@ -1,50 +1,47 @@
-@extends('layouts.adminbase')
-@section('title' ,'Add Content')
-@section('head')
+@extends('layouts.frontbase')
+
+@section('title' , 'User Content Add')
+@section('head1')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
+
 @section('content')
-    <section role="main" class="content-body">
-        <header class="page-header">
-            <h2>Add Content</h2>
-
-            <div class="right-wrapper pull-right">
-                <ol class="breadcrumbs">
-                    <li>
-                        <a href="{{route('admin.index')}}">
-                            <i class="fa fa-home"></i>
-                        </a>
-                    </li>
-                    <li><span>Pages</span></li>
-                    <li><span>Add Content</span></li>
-                </ol>
-
-                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-            </div>
-        </header>
-        <!-- start: page -->
-
-        <section class="panel">
-            <header class="panel-heading">
-                <div class="panel-actions">
-                    <a href="#" class="fa fa-caret-down"></a>
-                    <a href="#" class="fa fa-times"></a>
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary py-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">User Content Add</h1>
                 </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn btn-outline-primary" href="{{route('home')}}">Home</a>
+                        <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                        <a class="btn btn-outline-primary disabled" href="{{route('references')}}">User Content Add</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+<!-- About Start -->
+<div class="container-fluid bg-light">
+    <div class="container">
+        <div class="row">
 
-                <h2 class="panel-title">Content Elements</h2>
-            </header>
-            <div class="panel-body">
-                <form class="form-horizontal form-bordered" method="post" action="{{route('admin.content.store')}}" enctype="multipart/form-data">
+            <div class="col-lg-12 m-0 my-lg-5 pt-5 pb-5 pb-lg-2 pl-lg-5">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">User Content</h6>
+                <form class="form-horizontal form-bordered" method="post" action="{{route('usercontent.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Parent Content</label>
                         <div class="col-md-6">
-                        <select  class="form-control" name="category_id">
+                            <select  class="form-control" name="category_id">
 
-                            @foreach($data as $rs)
-                                <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
-                            @endforeach
-                        </select>
+                                @foreach($data as $rs)
+                                    <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
 
@@ -66,8 +63,11 @@
                             <input type="text" class="form-control" name="description">
                         </div>
                     </div>
-
-                    <input type="hidden" class="form-control" name="user_id" value="{{Auth::user()->id}}">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input type="hidden" class="form-control" name="user_id" value="{{Auth::user()->id}}">
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">School Name</label>
@@ -114,18 +114,6 @@
 
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Status</label>
-                        <div class="col-md-6">
-                            <select  class="form-control" name="status">
-                            <option>True</option>
-                            <option>False</option>
-                            </select>
-                        </div>
-
-                    </div>
-
                     <div class="form-group" >
                         <label class="col-md-5 control-label" for="inputDefault" ></label>
 
@@ -137,13 +125,11 @@
 
 
                 </form>
+
             </div>
-        </section>
+        </div>
+    </div>
+</div>
+<!-- About End -->
 
-
-        <!-- end: page -->
-
-
-    </section>
 @endsection
-

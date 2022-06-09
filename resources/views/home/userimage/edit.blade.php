@@ -1,12 +1,10 @@
 @extends('layouts.adminbase')
-@section('title' ,'Edit Content : '.$data->title)
-@section('head')
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-@endsection
+@section('title' ,'Edit Category : '.$data->title)
+
 @section('content')
     <section role="main" class="content-body">
         <header class="page-header">
-            <h2>Edit Content : {{$data->title}}</h2>
+            <h2>Edit Category : {{$data->title}}</h2>
 
             <div class="right-wrapper pull-right">
                 <ol class="breadcrumbs">
@@ -16,7 +14,7 @@
                         </a>
                     </li>
                     <li><span>Pages</span></li>
-                    <li><span>Edit Content</span></li>
+                    <li><span>Edit Category</span></li>
                 </ol>
 
                 <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -31,19 +29,19 @@
                     <a href="#" class="fa fa-times"></a>
                 </div>
 
-                <h2 class="panel-title">Content Elements</h2>
+                <h2 class="panel-title">Category Elements</h2>
             </header>
             <div class="panel-body">
-                <form class="form-horizontal form-bordered" method="post" action="{{route('admin.content.update',['id'=>$data->id])}}" enctype="multipart/form-data">
+                <form class="form-horizontal form-bordered" method="post" action="{{route('admin.category.update',['id'=>$data->id])}}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Parent Content</label>
+                        <label class="col-md-3 control-label" for="inputDefault">Parent Category</label>
                         <div class="col-md-6">
-                            <select  class="form-control" name="category_id">
-                                <option value="0" selected="selected">Main Content</option>
+                            <select  class="form-control" name="parent_id">
+                                <option value="0" selected="selected">Main Category</option>
                                 @foreach($datalist as $rs)
-                                    <option value="{{$rs->id}}" @if($rs->id==$data->category_id) selected="selected" @endif>
+                                    <option value="{{$rs->id}}" @if($rs->id==$data->parent_id) selected="selected" @endif>
                                         {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
                                     </option>
                                 @endforeach
@@ -70,42 +68,6 @@
                             <input type="text" class="form-control" name="description" value="{{$data->description}}">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            <input type="hidden" class="form-control" name="user_id" value="{{$data->user_id}}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">School Name</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" name="school_name" value="{{$data->school_name}}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Course Name</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" name="course_name" value="{{$data->course_name}}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">Detail</label>
-                        <div class="col-md-6">
-                            <textarea class="form-control" id="detail" name="detail">
-                                {{$data->detail}}
-                            </textarea>
-                            <script>
-                                ClassicEditor
-                                    .create( document.querySelector( '#detail' ) )
-                                    .then( editor => {
-                                        console.log( editor );
-                                    } )
-                                    .catch( error => {
-                                        console.error( error );
-                                    } );
-                            </script>
-                        </div>
-                    </div>
-
 
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Image</label>
@@ -115,16 +77,6 @@
 
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputDefault">File</label>
-
-                        <div  class="col-md-6">
-                            <input type="file" class="form-control" name="file" value="{{$data->file}}">
-
-                        </div>
-                    </div>
-
 
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputDefault">Status</label>

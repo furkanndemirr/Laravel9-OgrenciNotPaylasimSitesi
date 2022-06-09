@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\AdminPanel;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Content;
+use App\Models\UserContent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Psy\Util\Str;
+use const http\Client\Curl\AUTH_ANY;
 
-class AdminContentController extends Controller
+class UserContentController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +21,8 @@ class AdminContentController extends Controller
     public function index()
     {
         //
-        $data=Content::all();
-        return view('admin.content.index',[
+        $data=Content::where('user_id',Auth::id())->get();
+        return view('home.usercontent',[
             'data'=>$data
         ]);
     }
@@ -34,11 +35,10 @@ class AdminContentController extends Controller
     public function create()
     {
         //
-        $data=  Category::all();
-        return view('admin.content.create',[
+        $data=Category::with('children')->get();
+        return view('home.usercontentadd',[
             'data'=>$data
         ]);
-
     }
 
     /**
@@ -52,7 +52,7 @@ class AdminContentController extends Controller
         //
         $data=new Content();
         $data->category_id= $request->category_id;
-        $data->user_id=$request->user_id;
+        $data->user_id= Auth::id();
         $data->title= $request->title;
         $data->keywords= $request->keywords;
         $data->description= $request->description;
@@ -62,84 +62,54 @@ class AdminContentController extends Controller
         if($request->file('file')){
             $data->file=$request->file('file')->store('files');
         }
-        $data->status= $request->status;
         if($request->file('image')){
             $data->image = $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/content');
+        return redirect('/usercontent');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Content  $content
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Content $content,$id)
+    public function show($id)
     {
         //
-        $data=Content::find($id);
-        return view('admin.content.show',[
-            'data'=>$data
-        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Content  $content
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Content $content,$id)
     {
         //
-        $data=Content::find($id);
-        $datalist=Category::all();
-        return view('admin.content.edit',[
-            'data'=>$data,
-            'datalist'=> $datalist
-        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Content  $content
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Content $content,$id)
+    public function update(Request $request, $id)
     {
         //
-        $data=Content::find($id);
-        $data->category_id= $request->category_id;
-        $data->user_id= $request->user_id;
-        $data->title= $request->title;
-        $data->keywords= $request->keywords;
-        $data->description= $request->description;
-        $data->school_name = $request->school_name;
-        $data->course_name = $request->course_name;
-        $data->detail= $request->detail;
-        if($request->file('file')){
-            $data->file=$request->file('file')->store('files');
-        }
-        $data->status= $request->status;
-        if($request->file('image')){
-            $data->image=$request->file('image')->store('images');
-        }
-        $data->save();
-        return redirect('admin/content');
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Content  $content
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Content $content,$id)
+    public function destroy($id)
     {
         //
         $data=Content::find($id);
@@ -149,6 +119,6 @@ class AdminContentController extends Controller
         }
 
         $data->delete();
-        return redirect('admin/content');
+        return redirect('usercontent');
     }
 }
